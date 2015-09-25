@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Welcome to RBDGTC</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="Styles/bootstrap.min.css" /> 
+
+		<style>
+	.glyphicon {
+		font-size: 100px;
+		margin-top: 45px;
+
+	}
+
+	.modal-dialog {}
+.thumbnail {margin-bottom:6px; height:250px; width: 250px;}
+
+.carousel-control.left,.carousel-control.right{
+  background-image:none;
+
+
+}
+
+	</style>
+	<script type="text/javascript">
+		/* copy loaded thumbnails into carousel */
+/* copy loaded thumbnails into carousel */
+$('.row .thumbnail').on('load', function() {
+  
+}).each(function(i) {
+  if(this.complete) {
+  	var item = $('<div class="item"></div>');
+    var itemDiv = $(this).parents('div');
+    var title = $(this).parent('a').attr("title");
+    
+    item.attr("title",title);
+  	$(itemDiv.html()).appendTo(item);
+  	item.appendTo('.carousel-inner'); 
+    if (i==0){ // set first item active
+     item.addClass('active');
+    }
+  }
+});
+
+/* activate the carousel */
+$('#modalCarousel').carousel({interval:false});
+
+/* change modal title when slide changes */
+$('#modalCarousel').on('slid.bs.carousel', function () {
+  $('.modal-title').html($(this).find('.active').attr("title"));
+})
+
+/* when clicking a thumbnail */
+$('.row .thumbnail').click(function(){
+    var idx = $(this).parents('div').index();
+  	var id = parseInt(idx);
+  	$('#myModal').modal('show'); // show the modal
+    $('#modalCarousel').carousel(id); // slide carousel to selected
+  	
+});
+
+	</script>
+	</head>
+	<body class="no-sidebar" onload="initialize()">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="index.html">RBDGTC</a></h1>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="index.html">Welcome</a></li>
+									<!--
+									<li>
+
+										<a href="#">Dropdown</a>
+										<ul>
+											<li><a href="#">Lorem ipsum dolor</a></li>
+											<li><a href="#">Magna phasellus</a></li>
+											<li>
+												<a href="#">Phasellus consequat</a>
+												<ul>
+													<li><a href="#">Lorem ipsum dolor</a></li>
+													<li><a href="#">Phasellus consequat</a></li>
+													<li><a href="#">Magna phasellus</a></li>
+													<li><a href="#">Etiam dolore nisl</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Veroeros feugiat</a></li>
+										</ul>
+									</li>
+									-->
+									<li><a href="index.html#about">About Us</a></li>
+									<li><a href="alumni.html">Alumni</a></li>
+									<li><a href="facilities.html">Facilities</a></li>
+									<li><a href="#gallery.html">Gallery</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</nav>
+
+					</header>
+				</div>
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div id="content">
+						<h2 class="text-center">Gallery</h2>
+						<br/>
+							<!-- Content -->
+								<article>
+								<div class="row">
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="images/gallery/1.JPG"><img class="thumbnail img-responsive" src="images/gallery/1.JPG"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="images/gallery/2.JPG" ><img class="thumbnail img-responsive" src="images/gallery/2.JPG" height="100px"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="images/gallery/3.JPG"><img class="thumbnail img-responsive" src="images/gallery/3.JPG"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="images/gallery/4.JPG"><img class="thumbnail img-responsive" src="images/gallery/4.JPG"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="images/gallery/5.JPG"><img class="thumbnail img-responsive" src="images/gallery/5.JPG"></a></div>
+      
+</div>
+<div class="modal" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+	<div class="modal-header">
+		<button class="close" type="button" data-dismiss="modal">×</button>
+		<h3 class="modal-title"></h3>
+	</div>
+	<div class="modal-body">
+		<div id="modalCarousel" class="carousel">
+          <div class="carousel-inner"></div>
+          <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+          <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+   </div>
+  </div>
+								</article>
+
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="6u 6u(medium) 12u$(small)">
+
+								<!-- Links -->
+									<section class="widget links">
+										<div id="map_canvas" style="width:500px; height:500px"></div>
+
+									</section>
+
+							</div>
+							<!--
+							<div class="3u 6u$(medium) 12u$(small)">
+
+								 Links 
+									<section class="widget links">
+										<h3>Random Stuff</h3>
+										<ul class="style2">
+											<li><a href="#">Etiam feugiat condimentum</a></li>
+											<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+											<li><a href="#">Sed porttitor cras in erat nec</a></li>
+											<li><a href="#">Felis varius pellentesque potenti</a></li>
+											<li><a href="#">Nullam scelerisque blandit leo</a></li>
+										</ul>
+									</section>
+
+							</div>
+							<div class="3u 6u(medium) 12u$(small)">
+							-->	
+								<!-- Links 
+									<section class="widget links">
+										<h3>Random Stuff</h3>
+										<ul class="style2">
+											<li><a href="#">Etiam feugiat condimentum</a></li>
+											<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+											<li><a href="#">Sed porttitor cras in erat nec</a></li>
+											<li><a href="#">Felis varius pellentesque potenti</a></li>
+											<li><a href="#">Nullam scelerisque blandit leo</a></li>
+										</ul>
+									</section>
+
+							</div>
+							-->
+							<div class="3	u 6u$(medium) 12u$(small)">
+
+								<!-- Contact -->
+									<section class="widget contact">
+										<h3>Contact Us</h3>
+										<ul>
+											<!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li> <!--
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+											-->
+										</ul>
+										<p><strong>RBDGTC</strong><br />
+										#88,Gubbi Thotadappa Road,<br />
+										Near City Railway Station,<br/>
+										Bangalore - 560023<br/>
+										<strong>Phone</strong>:(080) 22879665, (080) 22745037<br/>
+										<strong>Email</strong>:rbdgtc@yahoo.com</p>
+									</section>
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			
+			<script src="Scripts/bootstrap.min.js"></script> 
+			<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+			<script>
+      		
+			 function initialize() {
+    		 var position = new google.maps.LatLng(12.976867, 77.570091);
+    		 var myOptions = {
+      		 zoom: 25,
+      		 center: position,
+             mapTypeId: google.maps.MapTypeId.ROADMAP
+    		 };
+    		var map = new google.maps.Map(
+        	document.getElementById("map_canvas"),
+        	myOptions);
+ 
+    		var marker = new google.maps.Marker({
+        	position: position,
+        	map: map,
+        	title:"This is the place."
+    		});  
+ 
+    	var contentString = '<strong>RBDGTC</strong>!';
+    	var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    	});
+ 
+    	google.maps.event.addListener(marker, 'click', function() {
+      	infowindow.open(map,marker);
+    	});
+ 
+  		}
+ 
+    </script>
+
+	</body>
+</html>
