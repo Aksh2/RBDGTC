@@ -12,10 +12,21 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="Styles/bootstrap.min.css" />
 		<style>
       #map {
         width: 500px;
         height: 400px;
+      }
+       h2{
+      	font-family: "Open Sans";
+      	color:black;
+      	font-weight: bold;
+      }
+      p
+      {
+      	font-size: 20px;
+      	font-family: "Open Sans";
       }
     </style>
 
@@ -192,7 +203,7 @@
 			 function initialize() {
     		 var position = new google.maps.LatLng(12.976867, 77.570091);
     		 var myOptions = {
-      		 zoom: 25,
+      		 zoom: 19,
       		 center: position,
              mapTypeId: google.maps.MapTypeId.ROADMAP
     		 };

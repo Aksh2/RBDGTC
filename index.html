@@ -12,12 +12,31 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link href="Styles/bootstrap.min.css" rel="stylesheet" />
+
 		<style>
       #map {
         width: 500px;
         height: 400px;
       }
-    </style>
+      #my-carousel {
+      	margin-top: 20px;
+      }
+      .img {
+      	width: 1000px;
+      	max-height: 450px;
+      }
+      h2{
+      	font-family: "Open Sans";
+      	color:black;
+      	font-weight: bold;
+      }
+      p
+      {
+      	font-size: 20px;
+      	font-family: "Open Sans";
+      }
+       </style>
 
 	</head>
 	<body class="homepage" onload="initialize()">
@@ -76,8 +95,50 @@
 								<h2>RAO BAHADUR DHARMAPRAVARTHA GUBBI THOTADAPPA CHARITIES</h2>
 								<p>Welcome</p>
 
-								<img src="images/entrance.jpg" width="1100" height="550" style="margin-top:10px;">
+
+								<div class="row">
+								<div id="my-carousel" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+									<li data-target="#my-carousel" data-slide-to="1"></li>
+									<li data-target="#my-carousel" data-slide-to="2"></li>
+								</ol>
+
+							<div class="carousel-inner">
+							
+							<div class="item active">
+								<img alt="First slide" class="img" src="images/gallery/0-2.JPG">
+								<div class="carousel-caption">
+									
+								</div>
+						    </div>
+							
+							<div class="item">
+								<img alt="Second slide" class="img" src="images/entrance.jpg" >
+								<div class="carousel-caption">
+									
+								</div>
 							</div>
+
+							<div class="item">
+								<img alt="Third slide" class="img" src="images/gallery/5-0.JPG">
+								<div class="carousel-caption">
+									
+								</div>
+							</div>
+
+						
+
+						<a class="left carousel-control" href="#my-carousel" data-slide="prev" >
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#my-carousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+
+			</div>
 							<!--
 							<div class="5u 12u(medium)">
 								<ul>
@@ -99,7 +160,7 @@
 								<!-- Sidebar -->
 									<div id="sidebar">
 										<section class="widget thumbnails">
-											<h3>Founder</h3>
+											<h2>Founder</h2>
 											<div class="grid">
 												<div class="row 50%">
 													<div class="12u"><a href="#" class="image fit"><img src="images/founder1.jpeg" alt="Founder Image" /></a></div>
@@ -119,7 +180,7 @@
 									<div id="content">
 										<section class="last">
 											<h2 id="about">About Us</h2>
-											<p>Rao Bahadur "Dharmapravartha" Gubbi Thotadappa (1838-1910)(Gubbi), was an Indian businessman and philanthropist. He founded a free lodging place for tourists from across the nation called "Thotadappa Chathra". He was honoured with the title "Dharmapravartha" by the Maharaja of Mysore, Krishnaraja Wodeyar IV and "Rao Bahadur" by the Britishgovernment. Thotadappa was born in 1838 in a Lingayat family of Gubbi. His family moved to Bangalore in the later years where he started his business in Mamulpet.
+											<p class="text">Rao Bahadur "Dharmapravartha" Gubbi Thotadappa (1838-1910)(Gubbi), was an Indian businessman and philanthropist. He founded a free lodging place for tourists from across the nation called "Thotadappa Chathra". He was honoured with the title "Dharmapravartha" by the Maharaja of Mysore, Krishnaraja Wodeyar IV and "Rao Bahadur" by the Britishgovernment. Thotadappa was born in 1838 in a Lingayat family of Gubbi. His family moved to Bangalore in the later years where he started his business in Mamulpet.
 											</p>
 
 											<p>
@@ -269,6 +330,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="Scripts/bootstrap.min.js"></script>
 			<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 			<script>
@@ -276,7 +338,7 @@
 			 function initialize() {
     		 var position = new google.maps.LatLng(12.976867, 77.570091);
     		 var myOptions = {
-      		 zoom: 25,
+      		 zoom: 19,
       		 center: position,
              mapTypeId: google.maps.MapTypeId.ROADMAP
     		 };
